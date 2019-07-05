@@ -13,7 +13,6 @@ export class TodoService {
         let todo = this.todos.find(t => {
             return t.id === id;
         })
-        console.log(todo)
         return todo;
     }
 
@@ -26,5 +25,14 @@ export class TodoService {
         let todo = new Todo(maxId + 1, name, completed, completed === true ? new Date() : null)
         this.todos.push(todo)
         return todo.id
+    }
+
+    updateTodo(id: number, name: string, completed: boolean) {
+        let todo = this.todos.find(t => {
+            return t.id === id;
+        })
+        todo.name = name;
+        todo.completed = completed;
+        todo.dateCompleted = completed === true ? new Date() : null;
     }
 }
