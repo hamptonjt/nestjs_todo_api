@@ -1,3 +1,10 @@
+## Todo API example using NestJS
+
+This is just a small repo used to learn NestJS/Typescript.  For more information about Nest, see all the goodies below that came with the readme by default.
+
+<p>&nbsp;</p>
+<p><hr/></p>
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
 </p>
