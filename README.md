@@ -2,6 +2,14 @@
 
 This is just a small repo used to learn NestJS/Typescript.  For more information about Nest, see all the goodies below that came with the readme by default.
 
+## To Use:
+* clone down this repo and change directory to ```nestjs_todo_api```
+* ```npm install```
+* ```npm run start```
+* Navigate to ```http://localhost:3000``` to see ```Hello World```
+  * ```http://localhost:3000/todos``` is the base url for the API
+  * ```http://localhost:3000/api``` for swagger documentation
+
 <p>&nbsp;</p>
 <p><hr/></p>
 
