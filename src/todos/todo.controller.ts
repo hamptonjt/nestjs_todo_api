@@ -1,7 +1,7 @@
-import { Controller, Get, Post, Body, Param, Patch, Put, Delete } from "@nestjs/common";
+import { Controller, Get, Post, Body, Param, Patch, Put, Delete } from '@nestjs/common';
 
-import Todo from "./todo.model";
-import { TodoService } from "./todo.service";
+import Todo from './todo.model';
+import { TodoService } from './todo.service';
 
 @Controller('todos')
 export class TodoController {
@@ -9,29 +9,32 @@ export class TodoController {
 
     @Get()
     getTodoList(): Todo[] {
-        return this.todoService.fetchAllTodos(); 
+        return this.todoService.fetchAllTodos();
     }
 
     @Get(':id')
     getTodo(@Param('id') id: string): Todo {
-        let todo = this.todoService.fetchTodo(parseInt(id))
-        return todo; 
+        const todo = this.todoService.fetchTodo(parseInt(id, 10));
+        return todo;
     }
 
-
     @Post()
-    createTodo(@Body('name') name: string, @Body('completed') completed: boolean): number {
-        return this.todoService.createNewTodo(name, completed);
+    createTodo(@Body() todo: Todo): number {
+        return this.todoService.createNewTodo(todo);
+    // createTodo(@Body('name') name: string, @Body('completed') completed: boolean): number {
+    //     return this.todoService.createNewTodo(name, completed);
     }
 
     @Put()
     @Patch()
-    updateTodo(@Body('id') id: number, @Body('name') name: string, @Body('completed') completed: boolean): Todo {
-        return this.todoService.updateTodo(id, name, completed);
+    // updateTodo(@Body('id') id: number, ; @Body('name') name: string, ; @Body('completed') completed: boolean; ): Todo; {
+    //         return this.todoService.updateTodo(id, name, completed);
+    updateTodo(@Body() todo: Todo): Todo {
+        return this.todoService.updateTodo(todo);
     }
 
     @Delete(':id')
     deleteTodo(@Param('id') id: string): string {
-        return this.todoService.deleteTodo(parseInt(id));
+        return this.todoService.deleteTodo(parseInt(id, 10));
     }
 }
