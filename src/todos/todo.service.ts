@@ -16,7 +16,6 @@ export class TodoService {
         return todo;
     }
 
-    // createNewTodo(name: string, completed: boolean) {
     createNewTodo(todo: Todo) {
         let maxId = 0;
         if (this.todos.length > 0) {
