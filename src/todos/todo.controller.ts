@@ -21,14 +21,10 @@ export class TodoController {
     @Post()
     createTodo(@Body() todo: Todo): number {
         return this.todoService.createNewTodo(todo);
-    // createTodo(@Body('name') name: string, @Body('completed') completed: boolean): number {
-    //     return this.todoService.createNewTodo(name, completed);
     }
 
     @Put()
     @Patch()
-    // updateTodo(@Body('id') id: number, ; @Body('name') name: string, ; @Body('completed') completed: boolean; ): Todo; {
-    //         return this.todoService.updateTodo(id, name, completed);
     updateTodo(@Body() todo: Todo): Todo {
         return this.todoService.updateTodo(todo);
     }

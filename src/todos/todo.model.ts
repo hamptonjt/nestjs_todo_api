@@ -1,15 +1,15 @@
-import { ApiModelProperty } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 
 export default class Todo {
-    @ApiModelProperty()
+    @ApiProperty()
     public id: number;
 
-    @ApiModelProperty()
+    @ApiProperty()
     public name: string;
 
-    @ApiModelProperty()
+    @ApiProperty()
     public completed: boolean;
 
-    @ApiModelProperty()
+    @ApiProperty()
     public dateCompleted: Date;
 }
